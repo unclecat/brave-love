@@ -18,7 +18,7 @@ https://www.1ink.ink/
 
 `brave-love`
 
-当前仓库名是 `WP_Brave`。主题后台名称、text domain 和 Release 安装包都已经是 Brave Love / `brave-love`。如果要改 GitHub 仓库名，优先改成 `brave-love`，旧地址会自动跳转。
+当前 GitHub 仓库名是 `brave-love`。主题后台名称、text domain 和 Release 安装包一致。旧地址 `WP_Brave` 会自动跳转。
 
 ## Suggested Topics
 

@@ -2,16 +2,16 @@
 
 情侣纪念站 WordPress 主题。An editorial WordPress theme for couples to keep stories, photos, lists, and everyday notes.
 
-[![Version](https://img.shields.io/badge/version-1.2.3-ff5162.svg)](https://github.com/unclecat/WP_Brave/releases)
+[![Version](https://img.shields.io/badge/version-1.2.3-ff5162.svg)](https://github.com/unclecat/brave-love/releases)
 [![WordPress](https://img.shields.io/badge/WordPress-6.0%2B-21759b.svg)](https://wordpress.org/)
 [![PHP](https://img.shields.io/badge/PHP-7.4%2B-777bb4.svg)](https://www.php.net/)
 [![License](https://img.shields.io/badge/license-GPL%20v2%20or%20later-2ea44f.svg)](./LICENSE)
 
-[在线演示](https://www.1ink.ink/) · [下载主题](https://github.com/unclecat/WP_Brave/releases) · [使用手册](./docs/USER-GUIDE.md)
+[在线演示](https://www.1ink.ink/) · [下载主题](https://github.com/unclecat/brave-love/releases) · [使用手册](./docs/USER-GUIDE.md)
 
 ![Brave Love Theme Preview](./screenshot.png)
 
-WordPress 后台显示的主题名是 **Brave Love**。安装包目录是 `brave-love/`。当前 GitHub 仓库名仍是 `WP_Brave`。
+WordPress 后台显示的主题名是 **Brave Love**。安装包目录是 `brave-love/`。GitHub 仓库是 `brave-love`。
 
 ## 它能做什么
 
@@ -35,7 +35,7 @@ WordPress 后台显示的主题名是 **Brave Love**。安装包目录是 `brave
 
 ## 安装
 
-1. 从 [Releases](https://github.com/unclecat/WP_Brave/releases) 下载 `brave-love.zip`
+1. 从 [Releases](https://github.com/unclecat/brave-love/releases) 下载 `brave-love.zip`
 2. WordPress 后台：`外观 -> 主题 -> 添加主题 -> 上传主题`
 3. 启用 **Brave Love**
 4. 到 `设置 -> 固定链接` 点一次“保存更改”
@@ -47,7 +47,7 @@ WordPress 后台显示的主题名是 **Brave Love**。安装包目录是 `brave
 - 使用手册：[`docs/USER-GUIDE.md`](./docs/USER-GUIDE.md)
 - 更新日志：[`CHANGELOG.md`](./CHANGELOG.md)
 - 当前版本说明：[`RELEASE.md`](./RELEASE.md)
-- 仓库：<https://github.com/unclecat/WP_Brave>
+- 仓库：<https://github.com/unclecat/brave-love>
 - 作者站点：<https://www.1ink.ink/>
 
 ## License
