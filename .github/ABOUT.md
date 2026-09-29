@@ -4,15 +4,21 @@
 
 ## Description
 
-一款为情侣记录而生的 WordPress 主题，以杂志感呈现故事、照片、清单与日常。
+Brave Love：情侣纪念站 WordPress 主题，用杂志感排版记录故事、照片、清单与日常。
 
 ## Short English Description
 
-An editorial-style WordPress theme for couples to publish stories, memories, lists, notes, blessings, and photo galleries.
+Brave Love is an editorial WordPress theme for couples to publish stories, photos, lists, notes, and blessings.
 
 ## Website
 
 https://www.1ink.ink/
+
+## Suggested repository name
+
+`brave-love`
+
+当前仓库名是 `WP_Brave`。主题后台名称、text domain 和 Release 安装包都已经是 Brave Love / `brave-love`。如果要改 GitHub 仓库名，优先改成 `brave-love`，旧地址会自动跳转。
 
 ## Suggested Topics
 
@@ -30,3 +36,4 @@ https://www.1ink.ink/
 ## Social Preview Alt
 
 Brave Love WordPress theme preview showing an editorial-style romantic homepage, story timeline, and mobile-friendly content cards.
+

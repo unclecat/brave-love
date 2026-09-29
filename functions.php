@@ -6,7 +6,7 @@
  */
 
 // 定义常量
-define('BRAVE_VERSION', '1.2.2');
+define('BRAVE_VERSION', '1.2.3');
 define('BRAVE_BOOTSTRAP_VERSION', '5.3.2');
 define('BRAVE_PHOTOSWIPE_VERSION', '5.4.2');
 define('BRAVE_REWRITE_VERSION', 'travel-plan-v1');
@@ -619,8 +619,20 @@ add_action('template_redirect', 'brave_handle_frontend_note_publish');
  */
 add_filter('pre_comment_approved', 'brave_comment_moderation', 99, 2);
 function brave_comment_moderation($approved, $commentdata) {
-    // 所有评论都需要审核
-    return 0; // 0 = 待审核
+    $user_id = 0;
+
+    if (isset($commentdata['user_id'])) {
+        $user_id = absint($commentdata['user_id']);
+    } elseif (isset($commentdata['user_ID'])) {
+        $user_id = absint($commentdata['user_ID']);
+    }
+
+    // 能审核评论的登录用户（含管理员）自己的留言直接通过，避免祝福墙自己留言还要再审一遍。
+    if ($user_id && user_can($user_id, 'moderate_comments')) {
+        return 1;
+    }
+
+    return 0;
 }
 
 /**

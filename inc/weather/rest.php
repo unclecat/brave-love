@@ -95,10 +95,51 @@ function brave_get_weather_city_detail_payload($index) {
     return brave_qweather_normalize_city_weather($city, $index, true);
 }
 
+/**
+ * 天气 REST 使用的客户端 IP。
+ *
+ * 只取 REMOTE_ADDR，避免 X-Forwarded-For 被伪造后绕过限流。
+ *
+ * @return string
+ */
+function brave_weather_rest_client_ip() {
+    $ip = '';
+
+    if (!empty($_SERVER['REMOTE_ADDR']) && is_string($_SERVER['REMOTE_ADDR'])) {
+        $ip = trim((string) wp_unslash($_SERVER['REMOTE_ADDR']));
+    }
+
+    return filter_var($ip, FILTER_VALIDATE_IP) ? $ip : '0.0.0.0';
+}
+
+/**
+ * 天气 REST 的公开读接口限流。
+ *
+ * @return true|WP_Error
+ */
+function brave_weather_rest_permission() {
+    $limit = 30;
+    $window = MINUTE_IN_SECONDS;
+    $key = 'brave_wx_rl_' . md5(brave_weather_rest_client_ip());
+    $count = (int) get_transient($key);
+
+    if ($count >= $limit) {
+        return new WP_Error(
+            'brave_weather_rate_limited',
+            __('天气请求过于频繁，请稍后再试。', 'brave-love'),
+            array('status' => 429)
+        );
+    }
+
+    set_transient($key, $count + 1, $window);
+
+    return true;
+}
+
 function brave_register_weather_rest_routes() {
     register_rest_route('brave-love/v1', '/weather', array(
         'methods' => WP_REST_Server::READABLE,
-        'permission_callback' => '__return_true',
+        'permission_callback' => 'brave_weather_rest_permission',
         'callback' => function () {
             return rest_ensure_response(brave_get_home_weather_payload());
         },
@@ -106,7 +147,7 @@ function brave_register_weather_rest_routes() {
 
     register_rest_route('brave-love/v1', '/weather/(?P<index>\d+)', array(
         'methods' => WP_REST_Server::READABLE,
-        'permission_callback' => '__return_true',
+        'permission_callback' => 'brave_weather_rest_permission',
         'callback' => function ($request) {
             $index = absint($request['index']);
             return rest_ensure_response(brave_get_weather_city_detail_payload($index));

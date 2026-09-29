@@ -34,7 +34,7 @@ if (!defined('ABSPATH')) {
     </div>
     <?php endif; ?>
     <div class="footer-text footer-signoff">
-        <span class="footer-signoff-copyright">© <?php echo esc_html(wp_date('Y')); ?> <a href="<?php echo esc_url('https://www.1ink.ink/'); ?>"><?php echo esc_html(get_bloginfo('name')); ?></a></span>
+        <span class="footer-signoff-copyright">© <?php echo esc_html(wp_date('Y')); ?> <a href="<?php echo esc_url(home_url('/')); ?>"><?php echo esc_html(get_bloginfo('name')); ?></a></span>
         <span class="footer-slogan"><?php _e('用 ❤️ 记录我们的故事', 'brave-love'); ?></span>
     </div>
 </footer>
