@@ -7,9 +7,9 @@
 [![PHP](https://img.shields.io/badge/PHP-7.4%2B-777bb4.svg)](https://www.php.net/)
 [![License](https://img.shields.io/badge/license-GPL%20v2%20or%20later-2ea44f.svg)](./LICENSE)
 
-[在线演示](https://www.1ink.ink/) · [下载主题](https://github.com/unclecat/brave-love/releases) · [使用手册](./docs/USER-GUIDE.md)
+[产品介绍](https://www.1ink.ink/archives/733) · [下载主题](https://github.com/unclecat/brave-love/releases) · [使用手册](./docs/USER-GUIDE.md)
 
-![Brave Love Theme Preview](./screenshot.png)
+![Brave Love Theme Preview](./docs/images/hero.png)
 
 WordPress 后台显示的主题名是 **Brave Love**。安装包目录是 `brave-love/`。GitHub 仓库是 `brave-love`。
 
